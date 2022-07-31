@@ -18,11 +18,12 @@ class PaqueteController extends Controller
     public function store(Request $request)
     {
         $paquete = new Paquete();
+        $paquete->descripcion = $request->descripcion;
         $paquete->origen = $request->origen;
         $paquete->destino = $request->destino;
         $paquete->peso = $request->peso;
         $paquete->fecha = $request->fecha;
-        $paquete->cliente = $request->cliente;
+        $paquete->id_cliente = $request->id_cliente;
         $paquete->save();
     }
 
